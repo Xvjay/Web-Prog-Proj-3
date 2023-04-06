@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conway's Game of Life</title>
+  <link rel="stylesheet" href="gol.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas"></canvas>
+    <div id="menu">
+      <div id="controls">
+        <button id="start-btn">Start</button>
+        <button id="reset-btn">Reset</button>     
+        <label for="populate-percentage">Population Percentage:</label>
+        <input type="range" id="populate-percentage" min="0" max="100" step="1" value="30">
+        <label for="speed-input">Speed:</label>
+        <input type="range" id="speed-input" min="0" max="1000" step="10" value="100">
+        <button id="change-cell-color">Change Cell Color</button>
+        <div id="cell-color-options" class="color-options hidden">
+          <button class="color-option" style="background-color: #FFA07A;"></button>
+          <button class="color-option" style="background-color: #90EE90;"></button>
+          <button class="color-option" style="background-color: #ADD8E6;"></button>
+          <button class="color-option" style="background-color: #FFD700;"></button>
+          <button class="color-option" style="background-color: #FFC0CB;"></button>
+          <button class="color-option" style="background-color: #C0C0C0;"></button>
+        </div>
+        <button id="change-background-color">Change Background Color</button>
+        <div id="background-color-options" class="color-options hidden">
+          <button class="color-option" style="background-color: #E6E6FA;"></button>
+          <button class="color-option" style="background-color: #FFF0F5;"></button>
+          <button class="color-option" style="background-color: #FFE4B5;"></button>
+          <button class="color-option" style="background-color: #F0E68C;"></button>
+          <button class="color-option" style="background-color: #F5F5DC;"></button>
+          <button class="color-option" style="background-color: #F0FFFF;"></button>
+        </div>
+      </div>
+    </div>
+    <button id="menu-toggle">Menu</button>
+  </div>
+  <script src="gol.js"></script>
+</body>
+</html>
