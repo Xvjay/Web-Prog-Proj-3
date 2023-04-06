@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#game-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#game-canvas {
+  border: 1px solid #333;
+  flex-shrink: 0;
+}
+
+#menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #333;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+#menu-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.color-picker-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-options-container {
+  display: flex;
+  gap: 5px;
+}
+
+.color-option {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cell-color-option,
+.bg-color-option {
+  display: none;
+  position: absolute;
+}
+
+
