@@ -9,6 +9,8 @@ let intervalSpeed = 100;
 
 const startBtn = document.getElementById('start-btn');
 const resetBtn = document.getElementById('reset-btn');
+const nextBtn = document.getElementById('next-gen-btn');
+const next23Btn = document.getElementById('next-23-gen-btn');
 const populatePercentageInput = document.getElementById('populate-percentage');
 const speedInput = document.getElementById('speed-input');
 
@@ -109,6 +111,28 @@ function toggleGame() {
     startBtn.innerText = "Start";
   }
 }
+//Calculate the next generation then "draw" the grid
+function nextGen(){
+  if (intervalId == null){
+    update();
+  } else{
+    pauseGame();
+    update();
+    startBtn.innerText = "Start";
+  }
+}
+
+//Calculate the next 23 generations then "draw" the grid
+function next23Gen(){
+  if (intervalId !== null){
+    pauseGame();
+  }
+  for (let i = 0; i < 23; i++){
+    grid = nextGeneration(grid);
+  }
+  renderGrid(grid);
+  startBtn.innerText = "Start";
+}
 
 function resetGame() {
   pauseGame();
@@ -151,6 +175,8 @@ renderGrid(grid);
 
 resetBtn.addEventListener('click', resetGame);
 startBtn.addEventListener('click', toggleGame);
+nextBtn.addEventListener('click', nextGen);
+next23Btn.addEventListener('click', next23Gen);
 populatePercentageInput.addEventListener('input', onPopulatePercentageChange);
 speedInput.addEventListener('input', onSpeedChange);
 
