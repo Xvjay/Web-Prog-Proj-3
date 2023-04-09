@@ -7,6 +7,11 @@ let grid = createGrid(gridWidth, gridHeight);
 let intervalId = null;
 let intervalSpeed = 100;
 
+const startBtn = document.getElementById('start-btn');
+const resetBtn = document.getElementById('reset-btn');
+const populatePercentageInput = document.getElementById('populate-percentage');
+const speedInput = document.getElementById('speed-input');
+
 function createGrid(width, height) {
   return new Array(height).fill(null).map(() => new Array(width).fill(0));
 }
@@ -107,7 +112,9 @@ function toggleGame() {
 
 function resetGame() {
   pauseGame();
+  percentage = populatePercentageInput.value;
   grid = createGrid(gridWidth, gridHeight);
+  populateGridRandomly(grid,percentage);
   renderGrid(grid);
   startBtn.innerText = "Start";
 }
@@ -140,10 +147,7 @@ canvas.addEventListener('click', (e) => {
 populateGridRandomly(grid, 30);
 renderGrid(grid);
 
-const startBtn = document.getElementById('start-btn');
-const resetBtn = document.getElementById('reset-btn');
-const populatePercentageInput = document.getElementById('populate-percentage');
-const speedInput = document.getElementById('speed-input');
+
 
 resetBtn.addEventListener('click', resetGame);
 startBtn.addEventListener('click', toggleGame);
